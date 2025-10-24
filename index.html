@@ -121,6 +121,17 @@
 						$("#warn_last").text(warnlast)
 					}
 				function update(){
+					// 清空所有震度数组，防止旧数据累积
+					shindo10 = [];
+					shindo20 = [];
+					shindo30 = [];
+					shindo40 = [];
+					shindo45 = [];
+					shindo50 = [];
+					shindo55 = [];
+					shindo60 = [];
+					shindo70 = [];
+					
 					text = [];
 					$("#imginit").css("display","block")
 					time = data[0].earthquake.time.slice(11, 16);
@@ -471,7 +482,7 @@
 				}
 			})
 			}
-			setInterval(infocheck,15000)
+			setInterval(infocheck,5000) // 从15000改为5000，即5秒获取一次
 			infocheck()
 			
 			
